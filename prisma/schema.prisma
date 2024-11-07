@@ -1,0 +1,40 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model LawProposal {
+  id                     Int      @id @default(autoincrement())
+  typeid                 Int?     
+  kategoriid             Int?     
+  statusid               Int?     
+  titel                  String?  
+  titelkort              String?  
+  offentlighedskode      String?  
+  nummer                 String?  
+  nummerprefix           String?  
+  nummernumerisk         String?  
+  nummerpostfix          String?  
+  resume                 String?  
+  afstemningskonklusion  String?  
+  periodeid              Int?     
+  afgoerelsesresultatkode String? 
+  baggrundsmateriale     String?  
+  opdateringsdato        DateTime 
+  statsbudgetsag         Boolean  
+  begrundelse            String?  
+  paragrafnummer         Int?     
+  paragraf               String?  
+  afgoerelsesdato        DateTime?
+  afgoerelse             String?  
+  raadsmoededato         DateTime?
+  lovnummer              String?  
+  lovnummerdato          DateTime?
+  retsinformationsurl    String?  
+  fremsatundersagid      Int?     
+  deltundersagid         Int?     
+}
