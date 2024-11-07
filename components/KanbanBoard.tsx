@@ -30,11 +30,11 @@ export default function KanbanBoard(){
     }, []);
 
     return (
-        <div className="lex space-x-4 p-4">
+        <div className="flex space-x-4 p-4 w-full h-full overflow-scroll">
             {Object.entries(columns).map(([statusid, laws]) => (
                 <div key={statusid} className="flex-1 p-4 bg-gray-100 rounded-lg shadow">
                     <h2 className="text-xl font-semibold mb-4">Status {statusid}</h2>
-                    <div className="space-y-2">
+                    <div className="space-y-2 h-[70vh] overflow-y-scroll">
                         {laws.map((law) => (
                             <div key={law.id} className="p-4 bg-white rounded-lg shadow border">
                                 <h3 className="font-bold">{law.titel}</h3>
